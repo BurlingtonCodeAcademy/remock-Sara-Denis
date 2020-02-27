@@ -4,28 +4,42 @@ h1,h2{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.Kitten{
-  display:table-cell;
-  vertical-align: middle;
-  text-align: center;
- 
- 
-}
+#catImages{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 
-
-
-
+ }
 
 hr{
   border-width: 0.1px;
   margin-top: 0.01em;
   margin-left: 80pt;
   margin-right: 80pt;
+
 }
 
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+ 
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
+  li {
+    height: 40vh;
+    flex-grow: 1;
+  }
 
-
+  img {
+    width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+}
 
 .container {
     display: grid;
@@ -33,84 +47,59 @@ hr{
     height: 600px;
     grid-gap: 1rem;
     grid-template-areas:
-      "quote    quote         quote       quote       quote"
-      ".        wideContent1  wideContent1  content-1 ."
-      ".        wideContent1  wideContent1  content-1 ."
-      ".        wideContent1  wideContent1  content-1 ."
-      ".        wideContent1  wideContent1  content-1 ."
-      ".        wideContent1  wideContent1  content-1 ."
-      "footer   footer        footer      footer      footer ";
-        
+      "quote        quote         quote               quote       quote"
+      "blank-column wideContent1  wideContent1        content-1   ."
+      "blank-column wideContent1  wideContent1        content-1   ."
+      "blank-column wideContent1  wideContent1        content-1   ."
+      "blank-column wideContent1  wideContent1        content-1   ."
+      "blank-column wideContent1  wideContent1        content-1   .";   
   }
   
+  .wide-articles {
+    display: flex;
+    flex-direction: column;
+  }
+
   .quote {
     grid-area: quote;
   }
+
+  .blank-column {
+    grid-area: blank-column;
+    
+  }
   
   .wideContent1 {
-    grid-area: wideContent1;
-    
-    
-    
-  
-
-  }
+  display: flex;
+  flex-direction:column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+    }
   
   .content-1 {
-    grid-area: content-1;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:flex-end;
   }
-  
-  .content-2 {
-    grid-area: content-2;
-  }
-  
-  
-  .footer {
-    grid-area: footer;
-  }
-  
-  
-  
-  
   
   /* OTHER STYLES */
   
   body {
     background-color: white;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     padding: 20px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   
-  .item {
-    background-color: rgb(182, 186, 189);
-    color:black;
-    border-radius: 0px;
-    border: 0px solid #e6dfdf;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
   .quote {
-    background-color: white;
-    background-image: 
-  }
-  
-  .wideContent1 
-    
-  
-  
-  .content-1,
-  .content-2,
-  .content-3 {
-    background-image: 
+    background-color:rgb(201, 197, 197);
+    font-size: 20px;
+    text-align: center;
   }
   
   .footer {
-    background-color:white
-    
+    background-color:rgb(201,197,197);
+    font-size: 20px
   }
