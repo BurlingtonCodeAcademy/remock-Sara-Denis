@@ -41,7 +41,7 @@ hr{
   }
 }
 
-.container {
+.container-main {
     display: grid;
     width: 750px;
     height: 600px;
@@ -128,4 +128,20 @@ hr{
   button:hover {
   background-color: rgb(238, 146, 136);
   cursor: pointer;
+  }
+
+  .container-learn-more {
+    display: grid;
+    width: 750px;
+    height: 600px;
+    grid-template-columns:1fr 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    grid-template-areas:
+      "quote        quote                quote       quote"
+      "blank-column wideContent1         content-1   ."
+      "blank-column wideContent1         content-1   ."
+      "blank-column wideContent1         content-1   ."
+      "blank-column wideContent1         content-1   ."
+      "blank-column wideContent1         content-1   .";   
   }
