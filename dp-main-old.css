@@ -1,0 +1,137 @@
+.font-roboto {  /* large western font for page title */
+  font-family: 'Roboto Slab';
+  font-size: 35pt;
+  font-weight: bold;
+  font-variant: titling-caps;
+  font-stretch: 125%;
+  text-transform: uppercase;
+}
+
+.font-oxygen {  /* Medium serif font for medium and smaller areas */
+  font-family: 'Oxygen';
+  font-size: 12pt;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.font-noto {  /* small sans-serif font for text areas */
+  font-family: 'Noto Sans TC';
+  font-size: 10pt;
+}
+
+h1, h2, h3, h6 {
+  text-align: center;
+  color: rgb(235, 96, 80);
+  }
+
+h6 {
+    font: 6pt;
+  }
+
+#catImages{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+ }
+
+hr{
+  border-width: 0.1px;
+  margin-top: 0.01em;
+  margin-left: 80pt;
+  margin-right: 80pt;
+}
+
+ /* @media (max-aspect-ratio: 1/1) and (max-width: 600px) { */
+img {
+    width: 100%;
+    max-height: 120px;
+    min-width: 200px;
+    object-fit: contain;
+    vertical-align: bottom;
+  }
+
+.container {
+    display: grid;
+    width: 750px;
+    height: 600px;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    grid-template-areas:
+      "quote        quote             quote       quote"
+      "blank-column wideContent1      content-1   ."
+      "blank-column wideContent1      content-1   ."
+      "blank-column wideContent1      content-1   ."
+      "blank-column wideContent1      content-1   ."
+      "blank-column wideContent1      content-1   .";   
+  }
+  
+  .wide-articles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quote {
+    grid-area: quote;
+    text-align: center;
+    font-size: 14pt;
+  }
+
+  .blank-column {
+    grid-area: blank-column;
+  }
+  
+  .wideContent1 {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  }
+  
+  .content-1 {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:flex-end;
+  }
+  
+  /* OTHER STYLES */
+  
+  body {
+    background-color: white;
+    display: flex;
+    justify-content:center;
+    padding: 20px;
+  }
+  
+  .quote {
+    background-color:rgb(201, 197, 197);
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .footer {
+    background-color:rgb(201,197,197);
+    font-size: 20px
+  }
+
+  button {
+      font-family: "Source Sans Pro", sans-serif;
+      color: rgba(255, 255, 255, 0.884);
+      background-color: #ED786A;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.8vw;
+      width: 10vw;
+      height: 2.4vw;
+      box-shadow: 1px 1px lightgray;
+      font-weight: bold;
+      letter-spacing: 0.05rem;
+      margin: 1.5vw 0;
+    }
+
+    button:hover {
+      background-color: rgb(238, 146, 136);
+      cursor: pointer;
+    }
