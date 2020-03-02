@@ -8,7 +8,7 @@
   text-shadow: 2px 2px grey;
 }
 
-.font-oxygen11 {  /* Medium serif font for medium and smaller areas */
+.font-oxygen11 {  /* Medium serif font for smaller areas */
   font-family: 'Oxygen';
   font-size: 11pt;
   font-weight: bold;
@@ -16,7 +16,15 @@
   text-transform: uppercase;
 }
 
-.font-oxygen18 {  /* Medium serif font for medium and smaller areas */
+.font-oxygen13 {  /* Medium serif font for medium areas - dark gray font */
+  font-family: 'Oxygen';
+  font-size: 13pt;
+  font-weight: bold;
+  color: darkgray;
+  text-transform: uppercase;
+}
+
+.font-oxygen18 {  /* Medium serif font for big areas - dark gray font */
   font-family: 'Oxygen';
   font-size: 18pt;
   font-weight: bold;
@@ -24,7 +32,7 @@
   text-transform: uppercase;
 }
 
-.font-oxygen18w {  /* Medium serif font for medium and smaller areas */
+.font-oxygen18w {  /* Medium serif font for big areas - white font */
   font-family: 'Oxygen';
   font-size: 18pt;
   font-weight: bold;
@@ -34,13 +42,22 @@
 
 .font-noto {  /* small sans-serif font for text areas */
   font-family: 'Noto Sans TC';
-  font-size: 10pt;
+  font-size: 12pt;
+  color: darkgray;
 }
 
 h1, h3, h6 {
   text-align: center;
   color: rgb(235, 96, 80);
   }
+
+.center {
+  text-align: center;
+}
+
+.small-text {
+  text-align: justify;
+}
 
 h2 {
   text-align: left;
@@ -82,6 +99,10 @@ img {
     object-fit: contain;
     vertical-align: bottom;
     object-position: center;
+  }
+
+  .kittenSmall {
+    float: left;
   }
   
 body {
@@ -133,9 +154,9 @@ body {
   
   #wideContent1 {
     grid-area: wideContent1;
-   display: flex;
+   /* display: flex;
     flex-direction:column;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap; */
      justify-content: space-around; 
     font-size: 15px;
   }
@@ -167,6 +188,15 @@ body {
   margin: 1.5vw 0;
   }
 
+  .gray {
+    background-color: gray;
+  }
+
+  .gray:hover {
+    background-color: rgb(235, 96, 80);
+    cursor: pointer;
+  }
+
   button:hover {
   background-color: rgb(235, 96, 80);
   cursor: pointer;
@@ -180,41 +210,216 @@ body {
     align-self: center;
   }
 
-  .container-learn-more {
+  #container-learn-more {
     display: grid;
     /* width: 750px;
     height: 600px; */
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
     grid-template-areas:
-      "blank-column header        header        header      ."
-      "blank-column wideContent1  wide-Content1 content-1   ."
-      "blank-column wideContent1  wide-Content1 content-1   ."
-      "blank-column wideContent1  wide-Content1 content-1   ."
-      "blank-column wideContent1  wide-Content1 content-1   ."
-      "blank-column wideContent1  wide-Content1 content-1   .";
+      ".      header        header        header      ."
+      ".      wideContent1  wide-Content1 content-1   ."
+      ".      wideContent1  wide-Content1 content-1   ."
+      ".      wideContent1  wide-Content1 content-1   ."
+      ".      wideContent1  wide-Content1 content-1   ."
+      ".      wideContent1  wide-Content1 content-1   ."
+      "footer footer        footer        footer      footer";
   }
 
   #continue-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr   1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr   1fr 1fr 1fr ; 
+    grid-template-rows: 1fr   1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr   1fr 1fr 1fr ; 
     grid-gap: 1rem;
     grid-template-areas:
-      "blank-column header        header        header      ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "blank-column wideContent1  wideContent1  content-1   ."
-      "footer       footer        footer        footer      footer"
-      "footer       footer        footer        footer      footer"
-      "footer       footer        footer        footer      footer";
+      ".      header        header        header      ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      ".      wideContent1  wideContent1  content-1   ."
+      "footer footer        footer        footer      footer"
+      "footer footer        footer        footer      footer"
+      "footer footer        footer        footer      footer";
   }
+
+  #blog-post-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr   1fr 1fr 1fr 1fr 1fr 1fr    1fr 1fr 1fr ; 
+    grid-gap: 1rem;
+    grid-template-areas:
+      ".      header        header        header         ."
+      ".      wideContent1  wideContent1  wideContent1   ."
+      ".      wideContent1  wideContent1  wideContent1   ."
+      ".      wideContent1  wideContent1  wideContent1   ."
+      ".      wideContent1  wideContent1  wideContent1   ."
+      "footer footer        footer        footer        footer"
+      "footer footer        footer        footer        footer"
+      "footer footer        footer        footer        footer";
+  }
+  
+/* footer form CSS: (following): ----------------------------   */
+
+.form-container {
+  display: grid;
+  width:    4fr;
+  height:   5fr;
+  grid-gap: 1rem;
+  grid-template-columns:
+    [col1] 1fr
+    [col2] 1fr
+    [col3] 1fr
+    [col4] 1fr
+    [col5] 
+   ;
+  grid-template-rows:
+    [row1] 1fr
+    [row2] 1fr
+    [row3] 1fr
+    [row4] 1fr
+    [row5] 1fr
+    [row6] 
+  ;
+}
+
+.form-header {
+  grid-column: col1 / col5;
+  grid-row:    row1 / row1;
+  justify-content: center;
+  font-size:        30px;
+}
+
+.about {
+  grid-column: col3 / col5;
+  grid-row:    row2 / row2 ;
+}
+
+.location {
+  grid-column: col3 / col4;
+  grid-row:    row3 / row6;
+  align-items: left;
+}
+
+.social-media {
+  grid-column: col4 / col5;
+  grid-row:    row3 / row6;
+  
+}
+
+/* OTHER STYLES */
+
+form-body {
+  background-color: rgb(154, 158, 157);
+  display:          flex;
+  justify-content:  left;
+  padding:          0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.item {
+  background-color: #1EAAFC;
+  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+  color:            #000000;
+  border-radius:    0px;
+  /* border:           1px solid #171717; */
+  display:          flex;
+  font-size:        18px;
+}
+
+.form-header {
+  background-color: #ECF1EF;
+  font-family: 'Spectral SC', serif;
+  text-align: center;
+  font-size:        2em;
+}
+
+.form {
+  background-color: #FFFFFF;  
+  grid-column: col1 / col3;
+  grid-row:    row2 / row6;
+}
+
+.about {
+  background-color: #ECF1EF;
+  text-align: justify;
+}
+
+.location {
+  background-color: #ECF1EF;
+  text-align: left;
+}
+
+.social-media {
+  background-color: #ECF1EF;
+  text-align: left;
+}
+
+form {
+  /* Just to center the form on the page */
+  margin: 0 left;
+  background-color: #ECF1EF;
+  /* grid-column: col1 / col3;
+  grid-row:    row2 / row6; */
+  /* width: 700px; 
+  height: 200px; */
+  /* To see the outline of the form */
+  padding: 0em;
+  border: 0px solid #CCC;
+  border-radius: 0em;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+ /* label {
+  // To make sure that all labels have the same size and are properly aligned 
+  display: inline-block;
+  width: 90px;
+  text-align: left;
+} */ 
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em 'Roboto', sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 700px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 0px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  /* vertical-align: top; */
+  /* To give enough room to type some text */
+  height: 200px;
+}
+
+.form-button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 1px; /* same size as the label elements */
+}
+
+form-button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+     color: #FFFFFF;
+     background-color: #FF7256;
+     font-size: 20px;
+  margin-left: .0em;
+}
