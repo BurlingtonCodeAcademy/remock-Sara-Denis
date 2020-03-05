@@ -78,7 +78,7 @@ h6 {
   flex-direction: row; 
   flex-wrap: nowrap;
   justify-content: center;
-  align-content: space-around;
+  align-content: space-between;
   text-align: center;
 }
 
@@ -115,11 +115,10 @@ body {
 #main-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; 
+    grid-template-rows: 1fr   1fr 1fr 1fr 1fr 1fr 1fr 1fr   1fr 1fr 1fr ; 
     grid-gap: 1rem;
     grid-template-areas:
       ".      header        header        header      ."
-      ".      features      features      features    ."
       ".      features      features      features    ."
       "quote  quote         quote         quote       quote"
       ".      wideContent1  wideContent1  content-1   ."
