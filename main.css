@@ -46,12 +46,31 @@
   color: darkgray;
 }
 
+strong { 
+  font-weight: bold;
+}
+
 h1, h3, h6 {
   text-align: center;
   color: rgb(235, 96, 80);
   }
 
 .center {
+  text-align: center;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+.centered2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centered3 {
   text-align: center;
 }
 
@@ -71,15 +90,16 @@ h3 {
 h6 {
     font: 10pt;
     color: grey;
+    margin-bottom: 20px;
   }
 
 #catImages {
-  display:flex;
-  flex-direction: row; 
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: space-between;
-  text-align: center;
+   display:flex;
+ /* flex-direction: row; */ 
+ flex-wrap: nowrap; 
+  justify-content: space-around; 
+ /*  align-content: space-between; */
+  text-align: center; 
 }
 
 .hr-1 {
@@ -92,13 +112,14 @@ h6 {
 } 
 
 img {
-    width: 400px;
-    max-height: 600px;
-    min-width: 200px; 
+    width: 100%;
+  /*  max-height: 600px;
+    min-width: 200px; */
     width: max-content;
     object-fit: contain;
     vertical-align: bottom;
     object-position: center;
+    border: 2px solid lightgray;
   }
 
   .kittenSmall {
@@ -115,10 +136,11 @@ body {
 #main-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr   1fr 1fr 1fr 1fr 1fr 1fr 1fr   1fr 1fr 1fr ; 
-    grid-gap: 1rem;
+    grid-template-rows: 1fr   1fr 1fr   1fr  1fr 1fr 1fr 1fr 1fr   1fr 1fr 1fr ; 
+    grid-gap: 2rem;
     grid-template-areas:
       ".      header        header        header      ."
+      ".      features      features      features    ."
       ".      features      features      features    ."
       "quote  quote         quote         quote       quote"
       ".      wideContent1  wideContent1  content-1   ."
@@ -132,18 +154,33 @@ body {
       ;
   }
   
+.float {
+ float: left;
+  /* border-spacing: 3px;
+
+   margin-left: 15px;
+ / max-width: 30%;
+  max-height: 30%; */
+}
+
   #header {
     grid-area: header;
+    margin-bottom: 30px;
   }
 
   #features {
     grid-area: features;
+  /*  justify-content: center; */
+  /*  display: flex;
+    flex-direction: row; */
+    justify-content: space-between;
   }
 
   #quote {
     grid-area: quote;
     background-color:rgb(201, 197, 197);
     font-size: 20px;
+    align-items: center;
     text-align: center;
   }
 
@@ -197,7 +234,7 @@ body {
   }
 
   button:hover {
-  background-color: rgb(235, 96, 80);
+  background-color: gray;
   cursor: pointer;
   }
 
@@ -209,7 +246,7 @@ body {
     align-self: center;
   }
 
-  #container-learn-more {
+  #container-learn-more2 {
     display: grid;
     /* width: 750px;
     height: 600px; */
@@ -308,7 +345,6 @@ body {
 .social-media {
   grid-column: col4 / col5;
   grid-row:    row3 / row6;
-  
 }
 
 /* OTHER STYLES */
@@ -422,3 +458,85 @@ form-button {
      font-size: 20px;
   margin-left: .0em;
 }
+
+/* from sara's css below - */
+
+.container-main {
+  display: grid;
+   /* width: 750px;
+  height: 600px;  */
+  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  grid-template-areas:
+    ".      header        header        header      ."
+    "quote  quote         quote         quote       quote"
+    ".      wideContent1  wideContent1  content-1   ."
+    ".      wideContent1  wideContent1  content-1   ."
+    ".      wideContent1  wideContent1  content-1   ."
+    ".      wideContent1  wideContent1  content-1   ."
+    ".      wideContent1  wideContent1  content-1   ."
+    "footer footer        footer        footer      footer";   
+}
+
+.container-learn-more {
+  display: grid;
+   /* width: 750px;
+  height: 600px;  */ 
+  /* padding-left: 200pt; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-areas:
+      "header   header            header            header          header"
+      ".        content-1         wideContent-1     wideContent-1   ."
+      ".        content-1         wideContent-1     wideContent-1   ."
+      ".        content-1         wideContent-1     wideContent-1   ."
+      ".        content-1         wideContent-1     wideContent-1   ."
+      ".        content-1         wideContent-1     wideContent-1   ."
+      ".        content-1         wideContent-1     wideContent-1   ."
+      ".        content-1         wideContent-1     wideContent-1   ."   
+      ".        content-1         wideContent-1     wideContent-1   ."
+      ".        content-1         wideContent-1     wideContent-1   ."
+      "footer   footer            footer            footer          footer";
+    }
+
+ /* .container-blog {
+  display: grid;
+  grid-gap: 0rem;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "quote     quote      quote           ."
+    ".         content-1  wideContent-1   ."
+    ".         content-1  wideContent-1   ."
+    ".         content-1  wideContent-1   ."
+    ".         content-1  wideContent-1   ."
+    ".         content-1  wideContent-1   .";   
+}  */
+
+#footer {
+  background-color: #f3f3f3;
+}
+
+#footer-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-areas: ". footer-content .";
+}
+
+#footer-content-wrapper {
+  grid-area: footer-content;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 50% 50%;
+}
+
+ /* #features {
+
+  display: flex;
+
+  justify-content: center;
+
+} */
+
